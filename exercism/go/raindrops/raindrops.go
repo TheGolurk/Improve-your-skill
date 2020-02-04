@@ -14,7 +14,7 @@ func Convert(number int) (result string) {
 	if number%7 == 0 {
 		result += "Plong"
 	}
-	if number%3 != 0 && number%5 != 0 && number%7 != 0 {
+	if result == "" {
 		result += strconv.Itoa(number)
 	}
 

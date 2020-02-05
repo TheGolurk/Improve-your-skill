@@ -1,6 +1,8 @@
 //Package scrabble it's a package to calculate the score of a word
 package scrabble
 
+import "strings"
+
 var letters = make(map[string]int)
 
 func init() {
@@ -47,6 +49,14 @@ func init() {
 
 //Score calculates the score of a word
 func Score(word string) (points int) {
+
+	for _, item := range strings.Fields(word) {
+		for index := range letters {
+			if item == index {
+
+			}
+		}
+	}
 
 	return points
 }

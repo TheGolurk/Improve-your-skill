@@ -5,7 +5,7 @@ import "testing"
 func TestScore(t *testing.T) {
 	for _, test := range scrabbleScoreTests {
 		if actual := Score(test.input); actual != test.expected {
-			t.Errorf("Score(%q) expected %d, Actual %d", test.input, test.expected, actual)
+			t.Errorf("Score(%q) expected %d, Obtained %d", test.input, test.expected, actual)
 		}
 	}
 }

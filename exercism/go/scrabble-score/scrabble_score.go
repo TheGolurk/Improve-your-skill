@@ -49,23 +49,9 @@ func init() {
 
 //Score calculates the score of a word
 func Score(word string) (points int) {
-	sum, count := 0, 0
 
-	for _, item := range strings.Split(word, "") {
-
-		for index, point := range letters {
-
-			if index == strings.ToUpper(item) {
-				count = strings.Count(strings.ToUpper(item), index)
-				if count > 1 {
-					points += count * point
-				}
-				sum = point
-				points += sum
-			}
-
-		}
-
+	for i := 0; i < len(word); i++ {
+		points += letters[string(strings.ToUpper(word)[i])]
 	}
 
 	return points

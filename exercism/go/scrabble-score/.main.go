@@ -1,7 +1,9 @@
-//Package scrabble it's a package to calculate the score of a word
-package scrabble
+package main
 
-import "strings"
+import (
+	"fmt"
+	"strings"
+)
 
 var letters = make(map[string]int)
 
@@ -23,7 +25,7 @@ func init() {
 	letters["G"] = 2
 
 	// B, C, M, P -> 3
-	letters["B"] = 3
+	letters["D"] = 3
 	letters["C"] = 3
 	letters["M"] = 3
 	letters["P"] = 3
@@ -48,25 +50,33 @@ func init() {
 }
 
 //Score calculates the score of a word
-func Score(word string) (points int) {
+func Score(word string) {
+	points := 0
 	sum, count := 0, 0
-
 	for _, item := range strings.Split(word, "") {
+
+		// fmt.Println("Index e item ", in, item)
 
 		for index, point := range letters {
 
 			if index == strings.ToUpper(item) {
+				// fmt.Println("Index y point ", index, point)
+				fmt.Println("Points: ", point)
+
 				count = strings.Count(strings.ToUpper(item), index)
 				if count > 1 {
 					points += count * point
 				}
 				sum = point
 				points += sum
+				// fmt.Println("Puntos actuales: ", points)
 			}
-
 		}
-
 	}
 
-	return points
+	fmt.Println("Puntos totales: ", points)
+}
+
+func main() {
+	Score("street")
 }

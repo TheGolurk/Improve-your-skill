@@ -1,57 +1,55 @@
 //Package scrabble it's a package to calculate the score of a word
 package scrabble
 
-import "strings"
+import "unicode"
 
-var letters = make(map[string]int)
-
-func init() {
+var letters = map[rune]int{
 	// A, E, I, O, U, L, N, R, S, T -> 1
-	letters["A"] = 1
-	letters["E"] = 1
-	letters["I"] = 1
-	letters["O"] = 1
-	letters["U"] = 1
-	letters["L"] = 1
-	letters["N"] = 1
-	letters["R"] = 1
-	letters["S"] = 1
-	letters["T"] = 1
+	'A': 1,
+	'E': 1,
+	'I': 1,
+	'O': 1,
+	'U': 1,
+	'L': 1,
+	'N': 1,
+	'R': 1,
+	'S': 1,
+	'T': 1,
 
 	// D, G -> 2
-	letters["D"] = 2
-	letters["G"] = 2
+	'D': 2,
+	'G': 2,
 
 	// B, C, M, P -> 3
-	letters["B"] = 3
-	letters["C"] = 3
-	letters["M"] = 3
-	letters["P"] = 3
+	'B': 3,
+	'C': 3,
+	'M': 3,
+	'P': 3,
 
 	// F, H, V, W, Y -> 4
-	letters["F"] = 4
-	letters["H"] = 4
-	letters["V"] = 4
-	letters["W"] = 4
-	letters["Y"] = 4
+	'F': 4,
+	'H': 4,
+	'V': 4,
+	'W': 4,
+	'Y': 4,
 
 	// K -> 5
-	letters["K"] = 5
+	'K': 5,
 
 	// J, X -> 8
-	letters["J"] = 8
-	letters["X"] = 8
+	'J': 8,
+	'X': 8,
 
 	// Q, Z -> 10
-	letters["Q"] = 10
-	letters["Z"] = 10
+	'Z': 10,
+	'Q': 10,
 }
 
 //Score calculates the score of a word
 func Score(word string) (points int) {
 
-	for i := 0; i < len(word); i++ {
-		points += letters[string(strings.ToUpper(word)[i])]
+	for _, value := range word {
+		points += letters[unicode.ToUpper(value)]
 	}
 
 	return points

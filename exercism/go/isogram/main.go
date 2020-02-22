@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"unicode"
+	"strings"
 )
 
 func main() {
@@ -10,19 +10,13 @@ func main() {
 }
 
 // IsIsogram leadasdasdsdasds
-func IsIsogram(word string) bool {
+func IsIsogram(word string) (is bool) {
 	for _, letter := range word {
-		fmt.Println(letter)
-		for index, subLetter := range word {
-			fmt.Println(index, subLetter)
-			if index > 0 {
-				fmt.Println("Dentro de el if: ", index, subLetter)
-				if unicode.ToUpper(letter) == unicode.ToUpper(subLetter) {
-					fmt.Println("LETRA IGUAL")
-					return false
-				}
-			}
+
+		if con := strings.Count(word, string(letter)); con > 1 {
+			return false
 		}
+
 	}
 
 	return true

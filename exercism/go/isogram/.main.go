@@ -6,14 +6,15 @@ import (
 )
 
 func main() {
-	fmt.Println(IsIsogram("isogram"))
+	fmt.Println(IsIsogram("Alphabet"))
 }
 
 // IsIsogram leadasdasdsdasds
 func IsIsogram(word string) (is bool) {
-	for _, letter := range word {
+	wordLow := strings.ToLower(word)
+	for _, letter := range wordLow {
 
-		if con := strings.Count(word, string(letter)); con > 1 {
+		if con := strings.Count(wordLow, string(letter)); con > 1 {
 			return false
 		}
 

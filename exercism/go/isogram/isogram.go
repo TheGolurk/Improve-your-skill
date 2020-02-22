@@ -1,19 +1,22 @@
 // Package isogram determinates if a word is an isogram
 package isogram
 
-// import "unicode"
+import (
+	"strings"
+	"unicode"
+)
 
-// // IsIsogram is a function to know if a word is an isogram
-// func IsIsogram(word string) bool {
-// 	for _, letter := range word {
-// 		for index, subLetter := range word {
-// 			if index > 1 {
-// 				if unicode.ToUpper(letter) == unicode.ToUpper(subLetter) {
-// 					return false
-// 				}
-// 			}
-// 		}
-// 	}
+// IsIsogram is a function to know if a word is an isogram
+func IsIsogram(word string) (is bool) {
+	wordLow := strings.ToLower(word)
+	for _, letter := range wordLow {
 
-// 	return true
-// }
+		count := strings.Count(wordLow, string(letter))
+		if count > 1 && unicode.IsLetter(letter) == true {
+			return false
+		}
+
+	}
+
+	return true
+}

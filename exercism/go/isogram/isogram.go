@@ -7,7 +7,7 @@ import (
 )
 
 // IsIsogram is a function to know if a word is an isogram
-func IsIsogram(word string) (is bool) {
+func IsIsogram(word string) bool {
 	wordLow := strings.ToLower(word)
 	for _, letter := range wordLow {
 

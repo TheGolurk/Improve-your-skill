@@ -1,3 +1,4 @@
+// Package diffsquares calculates the differences between SquareOfSum and SumOfSquares
 package diffsquares
 
 // SquareOfSum sum some natural numbers

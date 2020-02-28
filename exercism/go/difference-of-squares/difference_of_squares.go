@@ -2,13 +2,22 @@
 package diffsquares
 
 // SquareOfSum sum some natural numbers
-func SquareOfSum(number int) int {
+func SquareOfSum(number int) (result int) {
 
-	return 0
+	for i := 1; i <= number; i++ {
+		result += i
+	}
+	result *= result
+
+	return result
 }
 
 // SumOfSquares sum of square of some numbers
-func SumOfSquares(number int) int {
+func SumOfSquares(number int) (result int) {
+
+	for i := 1; i <= count; i++ {
+
+	}
 
 	return 0
 }

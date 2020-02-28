@@ -15,15 +15,22 @@ func SquareOfSum(number int) (result int) {
 // SumOfSquares sum of square of some numbers
 func SumOfSquares(number int) (result int) {
 
-	for i := 1; i <= count; i++ {
-
+	for i := 1; i <= number; i++ {
+		result += i * i
 	}
 
-	return 0
+	return result
 }
 
 // Difference between the square of the sum and the sum of the squares
 func Difference(number int) int {
+	var resultSquareOfSum, resultSumOfSquare int
 
-	return 0
+	for i := 1; i <= number; i++ {
+		resultSquareOfSum += i
+		resultSumOfSquare += i * i
+	}
+	resultSquareOfSum *= resultSquareOfSum
+
+	return resultSquareOfSum - resultSumOfSquare
 }

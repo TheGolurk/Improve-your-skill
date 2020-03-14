@@ -5,3 +5,4 @@ Currently in these languages are these exercises
 * [GO](https://golang.org/)
 * [ELIXIR](https://elixir-lang.org/)
 * [RUST](https://www.rust-lang.org/)
+* [C++](https://isocpp.org/)
